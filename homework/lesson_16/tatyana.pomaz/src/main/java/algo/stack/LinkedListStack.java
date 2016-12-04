@@ -1,10 +1,10 @@
 package algo.stack;
 
-public class LinkedListStack<T> implements Stack<T>{
+public class LinkedListStack<T> implements Stack<T> {
   private LinkList<T> linkList;
   
   public LinkedListStack() {
-	  linkList = new LinkList<>();
+    linkList = new LinkList<>();
   }
   
   public void push(T item) {
@@ -12,16 +12,16 @@ public class LinkedListStack<T> implements Stack<T>{
   } 
   
   public T pop() {
-	T temp = linkList.getFirst(); 
-	linkList.deleteFirst();
-	return temp;
+    T temp = linkList.getFirst(); 
+    linkList.deleteFirst();
+    return temp;
   }
    
   
   private class LinkList<T> {
     private Node<T> first;
-	
-	private class Node<T> {
+
+    private class Node<T> {
       T value;
       Node<T> next;
 
@@ -30,22 +30,22 @@ public class LinkedListStack<T> implements Stack<T>{
       }
     }
 
-	public void addFirst(T item) {
+    public void addFirst(T item) {
       Node<T> newNode = new Node<>(item);
       newNode.next = first;
-	  first = newNode;
+      first = newNode;
     }
   
     public T getFirst() {
-	  return first.value; 	
-	}
-	
+      return first.value;
+    }
+
     public void deleteFirst() {
-	  first = first.next;
+      first = first.next;
     }
   
     private boolean isEmpty() {
-	  return first == null;
-	}
+      return first == null;
+    }
   }
 }
