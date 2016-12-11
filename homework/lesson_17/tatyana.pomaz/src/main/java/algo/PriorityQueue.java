@@ -25,7 +25,7 @@ public class PriorityQueue<T extends Comparable> implements Iterable<T> {
   }
 
   public T min() {
-    T min = (T) elements[1];
+    final T min = (T) elements[1];
 
     exchange(1, size);
     elements[size--] = null;
